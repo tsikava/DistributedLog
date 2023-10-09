@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  master:
+    build:
+      context: ./master
+    ports:
+      - "8000:8000"
+    networks:
+      - mynet
+
+  secondary:
+    build:
+      context: ./secondary
+    ports:
+      - "8001:8001"
+    networks:
+      - mynet
+
+
+networks:
+  mynet:
